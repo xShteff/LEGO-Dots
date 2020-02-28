@@ -116,6 +116,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _components_pages_dots_dots_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/pages/dots/dots.component */ "./src/app/components/pages/dots/dots.component.ts");
 /* harmony import */ var _components_stud_stud_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/stud/stud.component */ "./src/app/components/stud/stud.component.ts");
+/* harmony import */ var _pipes_stud_style_pipe__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pipes/stud-style.pipe */ "./src/app/pipes/stud-style.pipe.ts");
+
 
 
 
@@ -127,11 +129,11 @@ class AppModule {
 }
 AppModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({ type: AppModule, bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]] });
 AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({ factory: function AppModule_Factory(t) { return new (t || AppModule)(); }, providers: [], imports: [[_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"]]] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"], _components_stud_stud_component__WEBPACK_IMPORTED_MODULE_5__["StudComponent"], _components_pages_dots_dots_component__WEBPACK_IMPORTED_MODULE_4__["DotsComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"]] }); })();
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"], _components_stud_stud_component__WEBPACK_IMPORTED_MODULE_5__["StudComponent"], _components_pages_dots_dots_component__WEBPACK_IMPORTED_MODULE_4__["DotsComponent"], _pipes_stud_style_pipe__WEBPACK_IMPORTED_MODULE_6__["StudStylePipe"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"]] }); })();
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](AppModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
         args: [{
-                declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"], _components_stud_stud_component__WEBPACK_IMPORTED_MODULE_5__["StudComponent"], _components_pages_dots_dots_component__WEBPACK_IMPORTED_MODULE_4__["DotsComponent"]],
+                declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"], _components_stud_stud_component__WEBPACK_IMPORTED_MODULE_5__["StudComponent"], _components_pages_dots_dots_component__WEBPACK_IMPORTED_MODULE_4__["DotsComponent"], _pipes_stud_style_pipe__WEBPACK_IMPORTED_MODULE_6__["StudStylePipe"]],
                 imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"]],
                 providers: [],
                 bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]],
@@ -161,17 +163,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function DotsComponent_div_0_div_1_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "lego-stud", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "lego-stud", 5);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const col_r3 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("stud", col_r3)("colour", col_r3.colour);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("stud", col_r3);
 } }
 function DotsComponent_div_0_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, DotsComponent_div_0_div_1_Template, 2, 2, "div", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, DotsComponent_div_0_div_1_Template, 2, 1, "div", 3);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const row_r1 = ctx.$implicit;
@@ -181,17 +183,23 @@ function DotsComponent_div_0_Template(rf, ctx) { if (rf & 1) {
 class DotsComponent {
     constructor(dotsUtilsService) {
         this.dotsUtilsService = dotsUtilsService;
-        this.dotsGrid = this.dotsUtilsService.generateGrid(10, 10);
-        console.log(this.dotsGrid);
+        this.randomise();
     }
     ngOnInit() { }
+    randomise() {
+        this.dotsGrid = this.dotsUtilsService.generateGrid(8, 8);
+    }
 }
 DotsComponent.ɵfac = function DotsComponent_Factory(t) { return new (t || DotsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_services__WEBPACK_IMPORTED_MODULE_1__["DotsUtilsService"])); };
-DotsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: DotsComponent, selectors: [["lego-dots"]], decls: 1, vars: 1, consts: [["class", "row", 4, "ngFor", "ngForOf"], [1, "row"], ["class", "stud-container", 4, "ngFor", "ngForOf"], [1, "stud-container"], [3, "stud", "colour"]], template: function DotsComponent_Template(rf, ctx) { if (rf & 1) {
+DotsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: DotsComponent, selectors: [["lego-dots"]], decls: 3, vars: 1, consts: [["class", "row", 4, "ngFor", "ngForOf"], [1, "btn", 3, "click"], [1, "row"], ["class", "stud-container", 4, "ngFor", "ngForOf"], [1, "stud-container"], [3, "stud"]], template: function DotsComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, DotsComponent_div_0_Template, 2, 1, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "button", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function DotsComponent_Template_button_click_1_listener() { return ctx.randomise(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Randomise!");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.dotsGrid);
-    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["NgForOf"], _stud_stud_component__WEBPACK_IMPORTED_MODULE_3__["StudComponent"]], styles: [".stud-container[_ngcontent-%COMP%] {\n  display: inline-block;\n  width: 50px;\n  height: 50px;\n}\n.row[_ngcontent-%COMP%] {\n  height: 50px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3J1bm5lci93b3JrL0xFR08tRG90cy9MRUdPLURvdHMvc3JjL2FwcC9jb21wb25lbnRzL3BhZ2VzL2RvdHMvZG90cy5jb21wb25lbnQubGVzcyIsInNyYy9hcHAvY29tcG9uZW50cy9wYWdlcy9kb3RzL2RvdHMuY29tcG9uZW50Lmxlc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxxQkFBQTtFQUNBLFdBQUE7RUFDQSxZQUFBO0FDQ0Y7QURFQTtFQUNFLFlBQUE7QUNBRiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvcGFnZXMvZG90cy9kb3RzLmNvbXBvbmVudC5sZXNzIiwic291cmNlc0NvbnRlbnQiOlsiLnN0dWQtY29udGFpbmVyIHtcbiAgZGlzcGxheTppbmxpbmUtYmxvY2s7XG4gIHdpZHRoOiA1MHB4O1xuICBoZWlnaHQ6IDUwcHg7XG59XG5cbi5yb3cge1xuICBoZWlnaHQ6IDUwcHg7XG59XG4iLCIuc3R1ZC1jb250YWluZXIge1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIHdpZHRoOiA1MHB4O1xuICBoZWlnaHQ6IDUwcHg7XG59XG4ucm93IHtcbiAgaGVpZ2h0OiA1MHB4O1xufVxuIl19 */"] });
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["NgForOf"], _stud_stud_component__WEBPACK_IMPORTED_MODULE_3__["StudComponent"]], styles: [".stud-container[_ngcontent-%COMP%] {\n  display: inline-block;\n  width: 50px;\n  height: 50px;\n  padding: 1px;\n  background: black;\n}\n.row[_ngcontent-%COMP%] {\n  height: 50px;\n  padding: 1px 0px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3J1bm5lci93b3JrL0xFR08tRG90cy9MRUdPLURvdHMvc3JjL2FwcC9jb21wb25lbnRzL3BhZ2VzL2RvdHMvZG90cy5jb21wb25lbnQubGVzcyIsInNyYy9hcHAvY29tcG9uZW50cy9wYWdlcy9kb3RzL2RvdHMuY29tcG9uZW50Lmxlc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxxQkFBQTtFQUNBLFdBQUE7RUFDQSxZQUFBO0VBQ0EsWUFBQTtFQUNBLGlCQUFBO0FDQ0Y7QURFQTtFQUNFLFlBQUE7RUFDQSxnQkFBQTtBQ0FGIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9wYWdlcy9kb3RzL2RvdHMuY29tcG9uZW50Lmxlc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuc3R1ZC1jb250YWluZXIge1xuICBkaXNwbGF5OmlubGluZS1ibG9jaztcbiAgd2lkdGg6IDUwcHg7XG4gIGhlaWdodDogNTBweDtcbiAgcGFkZGluZzogMXB4O1xuICBiYWNrZ3JvdW5kOiBibGFjaztcbn1cblxuLnJvdyB7XG4gIGhlaWdodDogNTBweDtcbiAgcGFkZGluZzogMXB4IDBweDtcbn1cbiIsIi5zdHVkLWNvbnRhaW5lciB7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgd2lkdGg6IDUwcHg7XG4gIGhlaWdodDogNTBweDtcbiAgcGFkZGluZzogMXB4O1xuICBiYWNrZ3JvdW5kOiBibGFjaztcbn1cbi5yb3cge1xuICBoZWlnaHQ6IDUwcHg7XG4gIHBhZGRpbmc6IDFweCAwcHg7XG59XG4iXX0= */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](DotsComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -215,29 +223,21 @@ DotsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComp
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StudComponent", function() { return StudComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-/* harmony import */ var src_app_model__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/model */ "./src/app/model/index.ts");
+/* harmony import */ var _pipes_stud_style_pipe__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../pipes/stud-style.pipe */ "./src/app/pipes/stud-style.pipe.ts");
 
 
 
 class StudComponent {
-    constructor() {
-        this.colour = src_app_model__WEBPACK_IMPORTED_MODULE_1__["Colour"].Black;
-        this.pieceType = src_app_model__WEBPACK_IMPORTED_MODULE_1__["PieceType"].Empty;
-    }
-    ngOnInit() {
-        console.log(this.stud);
-    }
 }
 StudComponent.ɵfac = function StudComponent_Factory(t) { return new (t || StudComponent)(); };
-StudComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: StudComponent, selectors: [["lego-stud"]], inputs: { colour: "colour", pieceType: "pieceType", stud: "stud" }, decls: 2, vars: 4, consts: [[1, "stud"]], template: function StudComponent_Template(rf, ctx) { if (rf & 1) {
+StudComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: StudComponent, selectors: [["lego-stud"]], inputs: { stud: "stud" }, decls: 2, vars: 7, consts: [[1, "stud"]], template: function StudComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](1, "studStyle");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵstyleMap"]("background: " + (ctx.stud == null ? null : ctx.stud.colour));
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate2"](" ", ctx.stud == null ? null : ctx.stud.colour, " ", ctx.stud == null ? null : ctx.stud.pieceType, "\n");
-    } }, styles: [".stud[_ngcontent-%COMP%] {\n  height: 50px;\n  width: 50px;\n  cursor: pointer;\n  border: 1px solid rgba(0, 0, 0, 0.1);\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3J1bm5lci93b3JrL0xFR08tRG90cy9MRUdPLURvdHMvc3JjL2FwcC9jb21wb25lbnRzL3N0dWQvc3R1ZC5jb21wb25lbnQubGVzcyIsInNyYy9hcHAvY29tcG9uZW50cy9zdHVkL3N0dWQuY29tcG9uZW50Lmxlc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxZQUFBO0VBQ0EsV0FBQTtFQUNBLGVBQUE7RUFDQSxvQ0FBQTtBQ0NGIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9zdHVkL3N0dWQuY29tcG9uZW50Lmxlc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuc3R1ZCB7XG4gIGhlaWdodDogNTBweDtcbiAgd2lkdGg6IDUwcHg7XG4gIGN1cnNvcjogcG9pbnRlcjtcbiAgYm9yZGVyOiAxcHggc29saWQgcmdiYSgwLDAsMCwwLjEpXG59XG4iLCIuc3R1ZCB7XG4gIGhlaWdodDogNTBweDtcbiAgd2lkdGg6IDUwcHg7XG4gIGN1cnNvcjogcG9pbnRlcjtcbiAgYm9yZGVyOiAxcHggc29saWQgcmdiYSgwLCAwLCAwLCAwLjEpO1xufVxuIl19 */"] });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵstyleMap"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind2"](1, 4, ctx.stud == null ? null : ctx.stud.colour, ctx.stud == null ? null : ctx.stud.pieceType));
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMap"](ctx.stud == null ? null : ctx.stud.pieceType);
+    } }, pipes: [_pipes_stud_style_pipe__WEBPACK_IMPORTED_MODULE_1__["StudStylePipe"]], styles: [".stud[_ngcontent-%COMP%] {\n  height: 50px;\n  width: 50px;\n  cursor: pointer;\n  border: 1px solid rgba(0, 0, 0, 0.1);\n}\n.pizza-slice[_ngcontent-%COMP%] {\n  border-radius: 0 50px 0 0;\n  -moz-border-radius: 0 50px 0 0;\n  -webkit-border-radius: 0 50px 0 0;\n}\n.circle[_ngcontent-%COMP%] {\n  border-radius: 100%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3J1bm5lci93b3JrL0xFR08tRG90cy9MRUdPLURvdHMvc3JjL2FwcC9jb21wb25lbnRzL3N0dWQvc3R1ZC5jb21wb25lbnQubGVzcyIsInNyYy9hcHAvY29tcG9uZW50cy9zdHVkL3N0dWQuY29tcG9uZW50Lmxlc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxZQUFBO0VBQ0EsV0FBQTtFQUNBLGVBQUE7RUFDQSxvQ0FBQTtBQ0NGO0FER0E7RUFDRSx5QkFBQTtFQUNBLDhCQUFBO0VBQ0EsaUNBQUE7QUNERjtBRElBO0VBQ0UsbUJBQUE7QUNGRiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvc3R1ZC9zdHVkLmNvbXBvbmVudC5sZXNzIiwic291cmNlc0NvbnRlbnQiOlsiLnN0dWQge1xuICBoZWlnaHQ6IDUwcHg7XG4gIHdpZHRoOiA1MHB4O1xuICBjdXJzb3I6IHBvaW50ZXI7XG4gIGJvcmRlcjogMXB4IHNvbGlkIHJnYmEoMCwwLDAsMC4xKTtcbn1cblxuXG4ucGl6emEtc2xpY2Uge1xuICBib3JkZXItcmFkaXVzOiAwIDUwcHggMCAwO1xuICAtbW96LWJvcmRlci1yYWRpdXM6IDAgNTBweCAwIDA7XG4gIC13ZWJraXQtYm9yZGVyLXJhZGl1czogMCA1MHB4IDAgMDtcbn1cblxuLmNpcmNsZSB7XG4gIGJvcmRlci1yYWRpdXM6IDEwMCU7XG59XG4iLCIuc3R1ZCB7XG4gIGhlaWdodDogNTBweDtcbiAgd2lkdGg6IDUwcHg7XG4gIGN1cnNvcjogcG9pbnRlcjtcbiAgYm9yZGVyOiAxcHggc29saWQgcmdiYSgwLCAwLCAwLCAwLjEpO1xufVxuLnBpenphLXNsaWNlIHtcbiAgYm9yZGVyLXJhZGl1czogMCA1MHB4IDAgMDtcbiAgLW1vei1ib3JkZXItcmFkaXVzOiAwIDUwcHggMCAwO1xuICAtd2Via2l0LWJvcmRlci1yYWRpdXM6IDAgNTBweCAwIDA7XG59XG4uY2lyY2xlIHtcbiAgYm9yZGVyLXJhZGl1czogMTAwJTtcbn1cbiJdfQ== */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](StudComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -245,11 +245,7 @@ StudComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComp
                 styleUrls: ['./stud.component.less'],
                 templateUrl: './stud.component.html',
             }]
-    }], null, { colour: [{
-            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
-        }], pieceType: [{
-            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
-        }], stud: [{
+    }], null, { stud: [{
             type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
         }] }); })();
 
@@ -271,10 +267,11 @@ var Colour;
     // Credits to: https://brickipedia.fandom.com/wiki/Colour_Palette
     Colour["Red"] = "#ff0000";
     Colour["White"] = "#ffffff";
-    Colour["Black"] = "#000000";
+    // Black = '#000000',
     Colour["Lavender"] = "#cda4de";
     Colour["MediumReddishViolet"] = "#EE9DC3";
     Colour["MediumYellowishGreen"] = "#96B93B";
+    Colour["Yellow"] = "#Ffff00";
 })(Colour || (Colour = {}));
 
 
@@ -313,11 +310,44 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PieceType", function() { return PieceType; });
 var PieceType;
 (function (PieceType) {
-    PieceType[PieceType["Circle"] = 0] = "Circle";
-    PieceType[PieceType["Square"] = 1] = "Square";
-    PieceType[PieceType["PizzaSlice"] = 2] = "PizzaSlice";
-    PieceType[PieceType["Empty"] = 3] = "Empty";
+    PieceType["Circle"] = "circle";
+    PieceType["Square"] = "square";
+    PieceType["PizzaSlice"] = "pizza-slice";
+    PieceType["Empty"] = "empty";
 })(PieceType || (PieceType = {}));
+
+
+/***/ }),
+
+/***/ "./src/app/pipes/stud-style.pipe.ts":
+/*!******************************************!*\
+  !*** ./src/app/pipes/stud-style.pipe.ts ***!
+  \******************************************/
+/*! exports provided: StudStylePipe */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StudStylePipe", function() { return StudStylePipe; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+
+
+class StudStylePipe {
+    transform(colour, pieceType) {
+        if (pieceType !== 'empty') {
+            return `background: ${colour}`;
+        }
+        return '';
+    }
+}
+StudStylePipe.ɵfac = function StudStylePipe_Factory(t) { return new (t || StudStylePipe)(); };
+StudStylePipe.ɵpipe = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefinePipe"]({ name: "studStyle", type: StudStylePipe, pure: true });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](StudStylePipe, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Pipe"],
+        args: [{
+                name: 'studStyle',
+            }]
+    }], null, null); })();
 
 
 /***/ }),
@@ -344,14 +374,21 @@ class DotsUtilsService {
             const cols = [];
             for (let yi = 0; yi < y; yi -= -1) {
                 const stud = {
-                    colour: src_app_model__WEBPACK_IMPORTED_MODULE_1__["Colour"].Lavender,
-                    pieceType: src_app_model__WEBPACK_IMPORTED_MODULE_1__["PieceType"].Empty,
+                    colour: this.randomEnum(src_app_model__WEBPACK_IMPORTED_MODULE_1__["Colour"]),
+                    pieceType: this.randomEnum(src_app_model__WEBPACK_IMPORTED_MODULE_1__["PieceType"]),
                 };
                 cols.push(stud);
             }
             rows.push(cols);
         }
         return rows;
+    }
+    randomNumber(min, max) {
+        return Math.floor(Math.random() * max) + min;
+    }
+    randomEnum(anEnum) {
+        const enumValues = Object.keys(anEnum);
+        return anEnum[enumValues[this.randomNumber(0, enumValues.length)]];
     }
 }
 DotsUtilsService.ɵfac = function DotsUtilsService_Factory(t) { return new (t || DotsUtilsService)(); };
