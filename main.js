@@ -230,12 +230,12 @@ __webpack_require__.r(__webpack_exports__);
 class StudComponent {
 }
 StudComponent.ɵfac = function StudComponent_Factory(t) { return new (t || StudComponent)(); };
-StudComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: StudComponent, selectors: [["lego-stud"]], inputs: { stud: "stud" }, decls: 2, vars: 7, consts: [[1, "stud"]], template: function StudComponent_Template(rf, ctx) { if (rf & 1) {
+StudComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: StudComponent, selectors: [["lego-stud"]], inputs: { stud: "stud" }, decls: 2, vars: 8, consts: [[1, "stud"]], template: function StudComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](1, "studStyle");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵstyleMap"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind2"](1, 4, ctx.stud == null ? null : ctx.stud.colour, ctx.stud == null ? null : ctx.stud.pieceType));
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵstyleMap"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind3"](1, 4, ctx.stud == null ? null : ctx.stud.colour, ctx.stud == null ? null : ctx.stud.pieceType, ctx.stud == null ? null : ctx.stud.rotation));
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMap"](ctx.stud == null ? null : ctx.stud.pieceType);
     } }, pipes: [_pipes_stud_style_pipe__WEBPACK_IMPORTED_MODULE_1__["StudStylePipe"]], styles: [".stud[_ngcontent-%COMP%] {\n  height: 50px;\n  width: 50px;\n  cursor: pointer;\n  border: 1px solid rgba(0, 0, 0, 0.1);\n}\n.pizza-slice[_ngcontent-%COMP%] {\n  border-radius: 0 50px 0 0;\n  -moz-border-radius: 0 50px 0 0;\n  -webkit-border-radius: 0 50px 0 0;\n}\n.circle[_ngcontent-%COMP%] {\n  border-radius: 100%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3J1bm5lci93b3JrL0xFR08tRG90cy9MRUdPLURvdHMvc3JjL2FwcC9jb21wb25lbnRzL3N0dWQvc3R1ZC5jb21wb25lbnQubGVzcyIsInNyYy9hcHAvY29tcG9uZW50cy9zdHVkL3N0dWQuY29tcG9uZW50Lmxlc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxZQUFBO0VBQ0EsV0FBQTtFQUNBLGVBQUE7RUFDQSxvQ0FBQTtBQ0NGO0FER0E7RUFDRSx5QkFBQTtFQUNBLDhCQUFBO0VBQ0EsaUNBQUE7QUNERjtBRElBO0VBQ0UsbUJBQUE7QUNGRiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvc3R1ZC9zdHVkLmNvbXBvbmVudC5sZXNzIiwic291cmNlc0NvbnRlbnQiOlsiLnN0dWQge1xuICBoZWlnaHQ6IDUwcHg7XG4gIHdpZHRoOiA1MHB4O1xuICBjdXJzb3I6IHBvaW50ZXI7XG4gIGJvcmRlcjogMXB4IHNvbGlkIHJnYmEoMCwwLDAsMC4xKTtcbn1cblxuXG4ucGl6emEtc2xpY2Uge1xuICBib3JkZXItcmFkaXVzOiAwIDUwcHggMCAwO1xuICAtbW96LWJvcmRlci1yYWRpdXM6IDAgNTBweCAwIDA7XG4gIC13ZWJraXQtYm9yZGVyLXJhZGl1czogMCA1MHB4IDAgMDtcbn1cblxuLmNpcmNsZSB7XG4gIGJvcmRlci1yYWRpdXM6IDEwMCU7XG59XG4iLCIuc3R1ZCB7XG4gIGhlaWdodDogNTBweDtcbiAgd2lkdGg6IDUwcHg7XG4gIGN1cnNvcjogcG9pbnRlcjtcbiAgYm9yZGVyOiAxcHggc29saWQgcmdiYSgwLCAwLCAwLCAwLjEpO1xufVxuLnBpenphLXNsaWNlIHtcbiAgYm9yZGVyLXJhZGl1czogMCA1MHB4IDAgMDtcbiAgLW1vei1ib3JkZXItcmFkaXVzOiAwIDUwcHggMCAwO1xuICAtd2Via2l0LWJvcmRlci1yYWRpdXM6IDAgNTBweCAwIDA7XG59XG4uY2lyY2xlIHtcbiAgYm9yZGVyLXJhZGl1czogMTAwJTtcbn1cbiJdfQ== */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](StudComponent, [{
@@ -281,7 +281,7 @@ var Colour;
 /*!********************************!*\
   !*** ./src/app/model/index.ts ***!
   \********************************/
-/*! exports provided: Colour, PieceType */
+/*! exports provided: Colour, PieceType, Rotation */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -291,6 +291,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony import */ var _piece_type__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./piece-type */ "./src/app/model/piece-type.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PieceType", function() { return _piece_type__WEBPACK_IMPORTED_MODULE_1__["PieceType"]; });
+
+/* harmony import */ var _rotation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./rotation */ "./src/app/model/rotation.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Rotation", function() { return _rotation__WEBPACK_IMPORTED_MODULE_2__["Rotation"]; });
+
 
 
 
@@ -319,6 +323,27 @@ var PieceType;
 
 /***/ }),
 
+/***/ "./src/app/model/rotation.ts":
+/*!***********************************!*\
+  !*** ./src/app/model/rotation.ts ***!
+  \***********************************/
+/*! exports provided: Rotation */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Rotation", function() { return Rotation; });
+var Rotation;
+(function (Rotation) {
+    Rotation["ClockWise"] = "90";
+    Rotation["UpsideDown"] = "180";
+    Rotation["CounterClockWise"] = "270";
+    Rotation["None"] = "0";
+})(Rotation || (Rotation = {}));
+
+
+/***/ }),
+
 /***/ "./src/app/pipes/stud-style.pipe.ts":
 /*!******************************************!*\
   !*** ./src/app/pipes/stud-style.pipe.ts ***!
@@ -333,9 +358,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class StudStylePipe {
-    transform(colour, pieceType) {
+    transform(colour, pieceType, rotation) {
         if (pieceType !== 'empty') {
-            return `background: ${colour}`;
+            return `transform: rotate(${rotation}deg);background: ${colour}`;
         }
         return '';
     }
@@ -376,6 +401,7 @@ class DotsUtilsService {
                 const stud = {
                     colour: this.randomEnum(src_app_model__WEBPACK_IMPORTED_MODULE_1__["Colour"]),
                     pieceType: this.randomEnum(src_app_model__WEBPACK_IMPORTED_MODULE_1__["PieceType"]),
+                    rotation: this.randomEnum(src_app_model__WEBPACK_IMPORTED_MODULE_1__["Rotation"]),
                 };
                 cols.push(stud);
             }
