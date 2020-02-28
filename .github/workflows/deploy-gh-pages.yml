@@ -1,0 +1,24 @@
+name: Deploy to GH Pages
+
+on: [push]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: dependencies
+      run: |
+        npm ci
+    - name: build
+      run: |
+        npm run build
+      env:
+        CI: true
+    - name: deploy
+      if: success()
+      uses: peaceiris/actions-gh-pages@v2.5.0
+      env:
+        ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        PUBLISH_BRANCH: gh-pages
+        PUBLISH_DIR: ./dist/legodots
