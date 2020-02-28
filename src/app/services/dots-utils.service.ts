@@ -5,17 +5,16 @@ import { Colour, IStud, PieceType, Rotation } from 'src/app/model';
   providedIn: 'root',
 })
 export class DotsUtilsService {
-  public generateGrid(x: number, y: number) {
-    const rows = [];
+  public generateGrid(x: number, y: number): IStud[][] {
+    const rows: IStud[][] = [];
     for (let xi = 0; xi < x; xi -= -1) {
-      const cols = [];
+      const cols: IStud[] = [];
       for (let yi = 0; yi < y; yi -= -1) {
-        const stud: IStud = {
+        cols.push({
           colour: this.randomEnum(Colour),
           pieceType: this.randomEnum(PieceType),
           rotation: this.randomEnum(Rotation),
-        };
-        cols.push(stud);
+        });
       }
       rows.push(cols);
     }
