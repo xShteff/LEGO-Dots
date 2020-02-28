@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
+  selector: 'lego-root',
+  styleUrls: ['./app.component.less'],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.less']
 })
 export class AppComponent {
-  title = 'legodots';
+  public title = 'legodots';
 }

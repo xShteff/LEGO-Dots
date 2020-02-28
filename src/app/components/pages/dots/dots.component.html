@@ -1,0 +1,5 @@
+<div class="row" *ngFor="let row of dotsGrid">
+  <div class="stud-container" *ngFor="let col of row">
+    <lego-stud [stud]="col" [colour]="col.colour"> </lego-stud>
+  </div>
+</div>
