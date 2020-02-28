@@ -1,7 +1,7 @@
 <div class="row" *ngFor="let row of dotsGrid">
   <div class="stud-container" *ngFor="let col of row">
-    <lego-stud [stud]="col" [colour]="col.colour"> </lego-stud>
+    <lego-stud [stud]="col"> </lego-stud>
   </div>
 </div>
 
-<button (click)="randomise()">Randomise!</button>
+<button (click)="randomise()" class="btn">Randomise!</button>
