@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Colour, IStud, PieceType } from 'src/app/model';
+import { Colour, IStud, PieceType, Rotation } from 'src/app/model';
 
 @Injectable({
   providedIn: 'root',
@@ -13,6 +13,7 @@ export class DotsUtilsService {
         const stud: IStud = {
           colour: this.randomEnum(Colour),
           pieceType: this.randomEnum(PieceType),
+          rotation: this.randomEnum(Rotation),
         };
         cols.push(stud);
       }
