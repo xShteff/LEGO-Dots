@@ -13,5 +13,6 @@ export class StudComponent implements OnInit {
 
   public ngOnInit(): void {
     console.log(this.stud);
+    // PieceType.
   }
 }

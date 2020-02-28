@@ -12,7 +12,7 @@ export class DotsUtilsService {
       for (let yi = 0; yi < y; yi -= -1) {
         const stud: IStud = {
           colour: Colour.Lavender,
-          pieceType: PieceType.Empty,
+          pieceType: this.randomEnum(PieceType),
         };
         cols.push(stud);
       }
@@ -20,5 +20,15 @@ export class DotsUtilsService {
     }
 
     return rows;
+  }
+
+  public randomNumber(min: number, max: number) {
+    return Math.floor(Math.random() * max) + min;
+  }
+
+  public randomEnum<T>(anEnum: T): string {
+    const enumValues = Object.keys(anEnum);
+
+    return anEnum[enumValues[this.randomNumber(0, enumValues.length)]];
   }
 }

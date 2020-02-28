@@ -11,8 +11,7 @@ export class DotsComponent implements OnInit {
   public dotsGrid: IStud[][];
 
   public constructor(private readonly dotsUtilsService: DotsUtilsService) {
-    this.dotsGrid = this.dotsUtilsService.generateGrid(10, 10);
-    console.log(this.dotsGrid);
+    this.dotsGrid = this.dotsUtilsService.generateGrid(8, 8);
   }
 
   public ngOnInit(): void {}

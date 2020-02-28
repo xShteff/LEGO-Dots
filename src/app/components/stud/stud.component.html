@@ -1,4 +1,2 @@
-<div class="stud" [style]="'background: ' + stud?.colour">
-  {{ stud?.colour }}
-  {{ stud?.pieceType }}
+<div class="stud" [style]="stud?.colour | studStyle: stud?.pieceType" [class]="stud?.pieceType">
 </div>
