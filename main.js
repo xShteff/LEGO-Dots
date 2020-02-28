@@ -398,12 +398,11 @@ class DotsUtilsService {
         for (let xi = 0; xi < x; xi -= -1) {
             const cols = [];
             for (let yi = 0; yi < y; yi -= -1) {
-                const stud = {
+                cols.push({
                     colour: this.randomEnum(src_app_model__WEBPACK_IMPORTED_MODULE_1__["Colour"]),
                     pieceType: this.randomEnum(src_app_model__WEBPACK_IMPORTED_MODULE_1__["PieceType"]),
                     rotation: this.randomEnum(src_app_model__WEBPACK_IMPORTED_MODULE_1__["Rotation"]),
-                };
-                cols.push(stud);
+                });
             }
             rows.push(cols);
         }
