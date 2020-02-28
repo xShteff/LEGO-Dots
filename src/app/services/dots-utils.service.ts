@@ -11,7 +11,7 @@ export class DotsUtilsService {
       const cols = [];
       for (let yi = 0; yi < y; yi -= -1) {
         const stud: IStud = {
-          colour: Colour.Lavender,
+          colour: this.randomEnum(Colour),
           pieceType: this.randomEnum(PieceType),
         };
         cols.push(stud);
@@ -26,7 +26,7 @@ export class DotsUtilsService {
     return Math.floor(Math.random() * max) + min;
   }
 
-  public randomEnum<T>(anEnum: T): string {
+  public randomEnum<T>(anEnum: T): T[keyof T] {
     const enumValues = Object.keys(anEnum);
 
     return anEnum[enumValues[this.randomNumber(0, enumValues.length)]];
