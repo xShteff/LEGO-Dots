@@ -3,13 +3,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DotsComponent } from './components/pages/dots/dots.component';
+import { PreviewStudComponent } from './components/preview-stud/preview-stud.component';
 import { SelectionMenuComponent } from './components/selection-menu/selection-menu.component';
 import { StudComponent } from './components/stud/stud.component';
 import { StudStylePipe } from './pipes/stud-style.pipe';
 
 @NgModule({
   bootstrap: [AppComponent],
-  declarations: [AppComponent, StudComponent, DotsComponent, StudStylePipe, SelectionMenuComponent],
+  declarations: [
+    AppComponent,
+    StudComponent,
+    DotsComponent,
+    StudStylePipe,
+    SelectionMenuComponent,
+    PreviewStudComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
 })

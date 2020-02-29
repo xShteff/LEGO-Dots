@@ -10,6 +10,7 @@ import { DotsUtilsService, StudInteractionService } from 'src/app/services';
 export class StudComponent {
   @Input() public stud: IStud;
   @Input() public inputMode = false;
+  @Input() public interactable = true;
 
   public constructor(
     private readonly dotsUtils: DotsUtilsService,
@@ -17,11 +18,13 @@ export class StudComponent {
   ) {}
 
   public interact(stud: IStud) {
-    if (!this.inputMode) {
-      stud.colour = this.studInteractionService.colour;
-      stud.pieceType = this.studInteractionService.piece;
-    } else {
-      this.studInteractionService.piece = stud.pieceType;
+    if (this.interactable) {
+      if (!this.inputMode) {
+        stud.colour = this.studInteractionService.colour;
+        stud.pieceType = this.studInteractionService.piece;
+      } else {
+        this.studInteractionService.piece = stud.pieceType;
+      }
     }
   }
 }

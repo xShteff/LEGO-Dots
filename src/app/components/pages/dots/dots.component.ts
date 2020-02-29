@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IStud } from 'src/app/model';
-import { DotsUtilsService } from 'src/app/services';
-import { StudInteractionService } from './../../../services/stud-interaction.service';
+import { DotsUtilsService, StudInteractionService } from 'src/app/services';
 
 @Component({
   selector: 'lego-dots',
@@ -10,6 +9,10 @@ import { StudInteractionService } from './../../../services/stud-interaction.ser
 })
 export class DotsComponent implements OnInit {
   public dotsGrid: IStud[][];
+
+  public preview: IStud = {
+    colour: this.studInteractionService.colour,
+  };
 
   public constructor(
     private readonly dotsUtilsService: DotsUtilsService,

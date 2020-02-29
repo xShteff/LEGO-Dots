@@ -10,6 +10,9 @@
 </div>
 <lego-selection-menu></lego-selection-menu>
 <div class="container">
+  <div class="preview">
+    <lego-preview-stud></lego-preview-stud>
+  </div>
   <div class="row" *ngFor="let row of dotsGrid">
     <div class="stud-container" *ngFor="let col of row">
       <lego-stud [stud]="col"> </lego-stud>
