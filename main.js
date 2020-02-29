@@ -245,9 +245,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SelectionMenuComponent", function() { return SelectionMenuComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 /* harmony import */ var src_app_model__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/model */ "./src/app/model/index.ts");
-/* harmony import */ var src_app_services__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services */ "./src/app/services/index.ts");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
-/* harmony import */ var _pipes_stud_style_pipe__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../pipes/stud-style.pipe */ "./src/app/pipes/stud-style.pipe.ts");
+/* harmony import */ var _model_piece_type__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../model/piece-type */ "./src/app/model/piece-type.ts");
+/* harmony import */ var src_app_services__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services */ "./src/app/services/index.ts");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+/* harmony import */ var _stud_stud_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../stud/stud.component */ "./src/app/components/stud/stud.component.ts");
+/* harmony import */ var _pipes_stud_style_pipe__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../pipes/stud-style.pipe */ "./src/app/pipes/stud-style.pipe.ts");
+
+
 
 
 
@@ -255,14 +259,21 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function SelectionMenuComponent_div_2_Template(rf, ctx) { if (rf & 1) {
-    const _r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function SelectionMenuComponent_div_2_Template_div_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r7); const colour_r5 = ctx.$implicit; const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r6.setColour(colour_r5.name); });
+    const _r8 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function SelectionMenuComponent_div_2_Template_div_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r8); const colour_r6 = ctx.$implicit; const ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r7.setColour(colour_r6.name); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](1, "studStyle");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const colour_r5 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵstyleMap"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](1, 2, colour_r5.colour));
+    const colour_r6 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵstyleMap"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](1, 3, colour_r6.colour));
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("title", colour_r6.name);
+} }
+function SelectionMenuComponent_lego_stud_4_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "lego-stud", 6);
+} if (rf & 2) {
+    const stud_r9 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("stud", stud_r9)("inputMode", true)("title", stud_r9.pieceType);
 } }
 class SelectionMenuComponent {
     constructor(studInteractionService) {
@@ -273,25 +284,38 @@ class SelectionMenuComponent {
                 name: r,
             };
         });
+        this.shapeStuds = Object.keys(_model_piece_type__WEBPACK_IMPORTED_MODULE_2__["PieceType"]).map((r) => {
+            const stud = {
+                colour: this.studInteractionService.colour,
+                pieceType: _model_piece_type__WEBPACK_IMPORTED_MODULE_2__["PieceType"][r],
+                rotation: src_app_model__WEBPACK_IMPORTED_MODULE_1__["Rotation"].None,
+            };
+            return stud;
+        });
     }
     ngOnInit() {
-        console.log(this.colours);
+        console.log(this.shapeStuds);
     }
     setColour(colourKey) {
         this.studInteractionService.colour = src_app_model__WEBPACK_IMPORTED_MODULE_1__["Colour"][colourKey];
     }
 }
-SelectionMenuComponent.ɵfac = function SelectionMenuComponent_Factory(t) { return new (t || SelectionMenuComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_services__WEBPACK_IMPORTED_MODULE_2__["StudInteractionService"])); };
-SelectionMenuComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: SelectionMenuComponent, selectors: [["lego-selection-menu"]], decls: 3, vars: 1, consts: [[1, "selection-menu"], [1, "colour"], ["class", "colour-select", 3, "style", "click", 4, "ngFor", "ngForOf"], [1, "colour-select", 3, "click"]], template: function SelectionMenuComponent_Template(rf, ctx) { if (rf & 1) {
+SelectionMenuComponent.ɵfac = function SelectionMenuComponent_Factory(t) { return new (t || SelectionMenuComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_services__WEBPACK_IMPORTED_MODULE_3__["StudInteractionService"])); };
+SelectionMenuComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: SelectionMenuComponent, selectors: [["lego-selection-menu"]], decls: 5, vars: 2, consts: [[1, "selection-menu"], [1, "colour"], ["class", "colour-select", 3, "style", "title", "click", 4, "ngFor", "ngForOf"], [1, "shape"], [3, "stud", "inputMode", "title", 4, "ngFor", "ngForOf"], [1, "colour-select", 3, "title", "click"], [3, "stud", "inputMode", "title"]], template: function SelectionMenuComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, SelectionMenuComponent_div_2_Template, 2, 4, "div", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, SelectionMenuComponent_div_2_Template, 2, 5, "div", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, SelectionMenuComponent_lego_stud_4_Template, 1, 3, "lego-stud", 4);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.colours);
-    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["NgForOf"]], pipes: [_pipes_stud_style_pipe__WEBPACK_IMPORTED_MODULE_4__["StudStylePipe"]], styles: [".selection-menu[_ngcontent-%COMP%] {\n  float: left;\n  margin-left: 50px;\n}\n.colour-select[_ngcontent-%COMP%] {\n  width: 40px;\n  height: 40px;\n  border: 1px solid black;\n  cursor: pointer;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3J1bm5lci93b3JrL0xFR08tRG90cy9MRUdPLURvdHMvc3JjL2FwcC9jb21wb25lbnRzL3NlbGVjdGlvbi1tZW51L3NlbGVjdGlvbi1tZW51LmNvbXBvbmVudC5sZXNzIiwic3JjL2FwcC9jb21wb25lbnRzL3NlbGVjdGlvbi1tZW51L3NlbGVjdGlvbi1tZW51LmNvbXBvbmVudC5sZXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsV0FBQTtFQUNBLGlCQUFBO0FDQ0Y7QURDQTtFQUNFLFdBQUE7RUFDQSxZQUFBO0VBQ0EsdUJBQUE7RUFDQSxlQUFBO0FDQ0YiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL3NlbGVjdGlvbi1tZW51L3NlbGVjdGlvbi1tZW51LmNvbXBvbmVudC5sZXNzIiwic291cmNlc0NvbnRlbnQiOlsiLnNlbGVjdGlvbi1tZW51IHtcbiAgZmxvYXQ6IGxlZnQ7XG4gIG1hcmdpbi1sZWZ0OiA1MHB4O1xufVxuLmNvbG91ci1zZWxlY3Qge1xuICB3aWR0aDogNDBweDtcbiAgaGVpZ2h0OiA0MHB4O1xuICBib3JkZXI6IDFweCBzb2xpZCBibGFjaztcbiAgY3Vyc29yOiBwb2ludGVyO1xufVxuIiwiLnNlbGVjdGlvbi1tZW51IHtcbiAgZmxvYXQ6IGxlZnQ7XG4gIG1hcmdpbi1sZWZ0OiA1MHB4O1xufVxuLmNvbG91ci1zZWxlY3Qge1xuICB3aWR0aDogNDBweDtcbiAgaGVpZ2h0OiA0MHB4O1xuICBib3JkZXI6IDFweCBzb2xpZCBibGFjaztcbiAgY3Vyc29yOiBwb2ludGVyO1xufVxuIl19 */"] });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.shapeStuds);
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_4__["NgForOf"], _stud_stud_component__WEBPACK_IMPORTED_MODULE_5__["StudComponent"]], pipes: [_pipes_stud_style_pipe__WEBPACK_IMPORTED_MODULE_6__["StudStylePipe"]], styles: [".selection-menu[_ngcontent-%COMP%] {\n  float: left;\n  margin-left: 30px;\n}\n.colour-select[_ngcontent-%COMP%] {\n  width: 40px;\n  height: 40px;\n  border: 1px solid black;\n  cursor: pointer;\n}\n.colour[_ngcontent-%COMP%], .shape[_ngcontent-%COMP%] {\n  float: left;\n  margin-left: 20px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3J1bm5lci93b3JrL0xFR08tRG90cy9MRUdPLURvdHMvc3JjL2FwcC9jb21wb25lbnRzL3NlbGVjdGlvbi1tZW51L3NlbGVjdGlvbi1tZW51LmNvbXBvbmVudC5sZXNzIiwic3JjL2FwcC9jb21wb25lbnRzL3NlbGVjdGlvbi1tZW51L3NlbGVjdGlvbi1tZW51LmNvbXBvbmVudC5sZXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsV0FBQTtFQUNBLGlCQUFBO0FDQ0Y7QURDQTtFQUNFLFdBQUE7RUFDQSxZQUFBO0VBQ0EsdUJBQUE7RUFDQSxlQUFBO0FDQ0Y7QURFQTs7RUFDRSxXQUFBO0VBQ0EsaUJBQUE7QUNDRiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvc2VsZWN0aW9uLW1lbnUvc2VsZWN0aW9uLW1lbnUuY29tcG9uZW50Lmxlc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuc2VsZWN0aW9uLW1lbnUge1xuICBmbG9hdDogbGVmdDtcbiAgbWFyZ2luLWxlZnQ6IDMwcHg7XG59XG4uY29sb3VyLXNlbGVjdCB7XG4gIHdpZHRoOiA0MHB4O1xuICBoZWlnaHQ6IDQwcHg7XG4gIGJvcmRlcjogMXB4IHNvbGlkIGJsYWNrO1xuICBjdXJzb3I6IHBvaW50ZXI7XG59XG5cbi5jb2xvdXIsIC5zaGFwZSB7XG4gIGZsb2F0OiBsZWZ0O1xuICBtYXJnaW4tbGVmdDogMjBweDtcbn1cbiIsIi5zZWxlY3Rpb24tbWVudSB7XG4gIGZsb2F0OiBsZWZ0O1xuICBtYXJnaW4tbGVmdDogMzBweDtcbn1cbi5jb2xvdXItc2VsZWN0IHtcbiAgd2lkdGg6IDQwcHg7XG4gIGhlaWdodDogNDBweDtcbiAgYm9yZGVyOiAxcHggc29saWQgYmxhY2s7XG4gIGN1cnNvcjogcG9pbnRlcjtcbn1cbi5jb2xvdXIsXG4uc2hhcGUge1xuICBmbG9hdDogbGVmdDtcbiAgbWFyZ2luLWxlZnQ6IDIwcHg7XG59XG4iXX0= */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](SelectionMenuComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -299,7 +323,7 @@ SelectionMenuComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵd
                 styleUrls: ['./selection-menu.component.less'],
                 templateUrl: './selection-menu.component.html',
             }]
-    }], function () { return [{ type: src_app_services__WEBPACK_IMPORTED_MODULE_2__["StudInteractionService"] }]; }, null); })();
+    }], function () { return [{ type: src_app_services__WEBPACK_IMPORTED_MODULE_3__["StudInteractionService"] }]; }, null); })();
 
 
 /***/ }),
@@ -325,14 +349,20 @@ class StudComponent {
     constructor(dotsUtils, studInteractionService) {
         this.dotsUtils = dotsUtils;
         this.studInteractionService = studInteractionService;
+        this.inputMode = false;
     }
     interact(stud) {
-        stud.colour = this.studInteractionService.colour;
-        stud.pieceType = this.studInteractionService.piece;
+        if (!this.inputMode) {
+            stud.colour = this.studInteractionService.colour;
+            stud.pieceType = this.studInteractionService.piece;
+        }
+        else {
+            this.studInteractionService.piece = stud.pieceType;
+        }
     }
 }
 StudComponent.ɵfac = function StudComponent_Factory(t) { return new (t || StudComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_services__WEBPACK_IMPORTED_MODULE_1__["DotsUtilsService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_services__WEBPACK_IMPORTED_MODULE_1__["StudInteractionService"])); };
-StudComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: StudComponent, selectors: [["lego-stud"]], inputs: { stud: "stud" }, decls: 2, vars: 8, consts: [[1, "stud", 3, "click"]], template: function StudComponent_Template(rf, ctx) { if (rf & 1) {
+StudComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: StudComponent, selectors: [["lego-stud"]], inputs: { stud: "stud", inputMode: "inputMode" }, decls: 2, vars: 8, consts: [[1, "stud", 3, "click"]], template: function StudComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function StudComponent_Template_div_click_0_listener() { return ctx.interact(ctx.stud); });
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](1, "studStyle");
@@ -349,6 +379,8 @@ StudComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComp
                 templateUrl: './stud.component.html',
             }]
     }], function () { return [{ type: src_app_services__WEBPACK_IMPORTED_MODULE_1__["DotsUtilsService"] }, { type: src_app_services__WEBPACK_IMPORTED_MODULE_1__["StudInteractionService"] }]; }, { stud: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+        }], inputMode: [{
             type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
         }] }); })();
 
@@ -384,7 +416,7 @@ var Colour;
 /*!********************************!*\
   !*** ./src/app/model/index.ts ***!
   \********************************/
-/*! exports provided: Colour, Interaction, PieceType, Rotation */
+/*! exports provided: PieceType, Colour, Interaction, Rotation */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
