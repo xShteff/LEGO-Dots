@@ -18,13 +18,15 @@ export class StudComponent {
   ) {}
 
   public interact(stud: IStud) {
-    if (this.interactable) {
-      if (!this.inputMode) {
-        stud.colour = this.studInteractionService.colour;
-        stud.pieceType = this.studInteractionService.piece;
-      } else {
-        this.studInteractionService.piece = stud.pieceType;
-      }
+    if (!this.interactable) {
+      return;
+    }
+    if (!this.inputMode) {
+      stud.colour = this.studInteractionService.colour;
+      stud.pieceType = this.studInteractionService.piece;
+      // stud.rotation = this.studInteractionService.rotation;
+    } else {
+      this.studInteractionService.piece = stud.pieceType;
     }
   }
 }

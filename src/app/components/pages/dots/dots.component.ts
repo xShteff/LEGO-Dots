@@ -10,10 +10,6 @@ import { DotsUtilsService, StudInteractionService } from 'src/app/services';
 export class DotsComponent implements OnInit {
   public dotsGrid: IStud[][];
 
-  public preview: IStud = {
-    colour: this.studInteractionService.colour,
-  };
-
   public constructor(
     private readonly dotsUtilsService: DotsUtilsService,
     private readonly studInteractionService: StudInteractionService
