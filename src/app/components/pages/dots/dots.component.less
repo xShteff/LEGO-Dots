@@ -1,3 +1,48 @@
+.header {
+  background-color: rgb(255, 207, 0);
+  height: 60px;
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+}
+
+
+.logo img {
+  height: 50px;
+  padding: 5px;
+  margin-left: 25px;
+}
+
+.app-name {
+  line-height: 60px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.menu {
+  list-style: none;
+  line-height: 60px;
+  padding: 0;
+  margin: 0 20px;
+  li {
+    display: inline-block;
+    padding: 0 20px;
+    cursor: pointer;
+    transition: background 0.4s;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+  }
+  li:hover {
+    background: rgba(0, 0, 0, 0.2);
+  }
+}
+
+
 .stud-container {
   display:inline-block;
   width: 50px;
@@ -9,4 +54,7 @@
 .row {
   height: 50px;
   padding: 1px 0px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
 }

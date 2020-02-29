@@ -1,7 +1,20 @@
-<div class="row" *ngFor="let row of dotsGrid">
-  <div class="stud-container" *ngFor="let col of row">
-    <lego-stud [stud]="col"> </lego-stud>
+<!--I know this is not a proper way to do it, I just cba to do it right.-->
+<div class="header">
+  <div class="logo"><img src="https://www.lego.com/cdn/cs/set/assets/blt6d3f7d252a252a42/LEGO-Logo-Ani2b.gif" alt="LOGO"></div>
+  <div class="app-name">
+    Dots
+  </div>
+  <ul class="menu">
+    <li (click)="randomise()">Randomise</li>
+    <li>Wub</li>
+    <li>Wub</li>
+  </ul>
+</div>
+<div class="container">
+  <div class="row" *ngFor="let row of dotsGrid">
+    <div class="stud-container" *ngFor="let col of row">
+      <lego-stud [stud]="col"> </lego-stud>
+    </div>
   </div>
 </div>
 
-<button (click)="randomise()" class="btn">Randomise!</button>
