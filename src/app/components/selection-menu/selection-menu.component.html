@@ -1,0 +1,10 @@
+<div class="selection-menu">
+  <div class="colour">
+    <div
+      class="colour-select"
+      *ngFor="let colour of colours"
+      [style]="colour.colour | studStyle"
+      (click)="setColour(colour.name)"
+    ></div>
+  </div>
+</div>
