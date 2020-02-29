@@ -1,2 +1,6 @@
-<div class="stud" [style]="stud?.colour | studStyle: stud?.pieceType: stud?.rotation" [class]="stud?.pieceType">
-</div>
+<div
+  class="stud"
+  [style]="stud?.colour | studStyle: stud?.pieceType:stud?.rotation"
+  [class]="stud?.pieceType"
+  (click)="interact(stud)"
+></div>

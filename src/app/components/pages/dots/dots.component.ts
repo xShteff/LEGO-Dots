@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IStud } from 'src/app/model';
 import { DotsUtilsService } from 'src/app/services';
+import { StudInteractionService } from './../../../services/stud-interaction.service';
 
 @Component({
   selector: 'lego-dots',
@@ -10,7 +11,10 @@ import { DotsUtilsService } from 'src/app/services';
 export class DotsComponent implements OnInit {
   public dotsGrid: IStud[][];
 
-  public constructor(private readonly dotsUtilsService: DotsUtilsService) {
+  public constructor(
+    private readonly dotsUtilsService: DotsUtilsService,
+    private readonly studInteractionService: StudInteractionService
+  ) {
     this.randomise();
   }
 
