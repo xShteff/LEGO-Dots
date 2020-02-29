@@ -5,6 +5,15 @@
       *ngFor="let colour of colours"
       [style]="colour.colour | studStyle"
       (click)="setColour(colour.name)"
+      [title]="colour.name"
     ></div>
+  </div>
+  <div class="shape">
+    <lego-stud
+      *ngFor="let stud of shapeStuds"
+      [stud]="stud"
+      [inputMode]="true"
+      [title]="stud.pieceType"
+    ></lego-stud>
   </div>
 </div>
