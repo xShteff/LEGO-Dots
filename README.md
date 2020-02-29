@@ -16,4 +16,4 @@ https://github.com/alstol/LEGO-Dots/projects/1
 
 ## Disclaimer
 
-Even if I am theoretically a LEGO employee this is NOT an "official licensed" app. Please don't fire me.
+Even if I am theoretically a LEGO employee this is NOT an "official licensed" app. Please don't fire me. Logo and style is "borrowed" from LEGO.com.
